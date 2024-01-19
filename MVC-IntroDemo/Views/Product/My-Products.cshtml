@@ -1,0 +1,25 @@
+﻿@using MVC_IntroDemo.Models.Product;
+@model IEnumerable<ProductViewModel>
+
+@{
+	ViewData["Title"] = "All Products";
+}
+
+<div>
+	<a style="width:18rem;" asp-controller="Product" asp-action="AllAsTextFile">
+		<button>Download Info</button>
+	</a>
+</div>
+
+<div class="card" style="width:18rem;">
+	<div class="card-header">@ViewData["Title"]</div>
+	<ul class="list-group list-group-flush">
+		@foreach (var product in Model.Where(pr => pr.Name.ToLower().Contains(ViewBag.Keyword.ToLower())))
+		{	
+			<li class="list-group-item">
+				<h2>N.@product.Id:@product.Name - @product.Price lv.</h2>
+			</li>
+		}
+	</ul>
+</div>
+
