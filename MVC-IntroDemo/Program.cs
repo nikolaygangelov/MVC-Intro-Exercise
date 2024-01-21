@@ -20,7 +20,7 @@ namespace MVC_IntroDemo
 			}
 
 			app.UseHttpsRedirection();
-			app.UseStaticFiles();
+			app.UseStaticFiles(); //This will tell the ASP.NET Core App to serve the static files in the "wwwroot" directory
 
 			app.UseRouting();
 
