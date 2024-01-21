@@ -1,4 +1,5 @@
-@model ProductViewModel
+// this directive makes the model available to the view
+@model ProductViewModel 
 
 @{
 	ViewData["Title"] = $"Product N.{Model.Id}";
@@ -7,7 +8,7 @@
 <div class="card">
 	<div class="card-header">@ViewData["Title"]</div>
 	<div class="card-body">
-			<h5>Product Name: @Model.Name</h5>
+			<h5>Product Name: @Model.Name</h5> //actual product passed by method View() in action ById of ProductController
 			<p>Price:@Model.Price lv.</p>
 	</div>
 </div>
