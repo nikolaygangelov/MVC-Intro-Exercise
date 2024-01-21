@@ -53,6 +53,7 @@ namespace MVC_IntroDemo.Controllers
 
 		public IActionResult AllAsJson()
 		{
+  			//JSON options to display the JSON indented
 			var options = new JsonSerializerOptions
 			{
 				WriteIndented = true
@@ -82,9 +83,9 @@ namespace MVC_IntroDemo.Controllers
 			{
 				sb.AppendLine($"Product {@product.Id}: {@product.Name} - {@product.Price} lv.");
 			}
-			Response.Headers.Add(HeaderNames.ContentDisposition, @"attachment;filename=products.txt");
+			Response.Headers.Add(HeaderNames.ContentDisposition, @"attachment;filename=products.txt"); //adding the Content-Disposition header to the Response, so that the file to be downloaded as an attachment
 
-			return File(Encoding.UTF8.GetBytes(sb.ToString().TrimEnd()), "text/plain");
+			return File(Encoding.UTF8.GetBytes(sb.ToString().TrimEnd()), "text/plain"); // returning text as byte array and "plain" as text type
 		}
 	}
 }
