@@ -10,6 +10,7 @@ namespace MVC_IntroDemo.Controllers
 {
 	public class ProductController : Controller
 	{
+ 		//there is no database, that is why this private field is located here
 		private IEnumerable<ProductViewModel> _products = new List<ProductViewModel>()
 		{
 			new ProductViewModel()
