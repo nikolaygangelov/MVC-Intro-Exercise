@@ -1,5 +1,6 @@
 ﻿namespace MVC_IntroDemo.Models.Product
 {
+	//substitute of database
 	public class ProductViewModel
 	{
 		public int Id { get; set; }
