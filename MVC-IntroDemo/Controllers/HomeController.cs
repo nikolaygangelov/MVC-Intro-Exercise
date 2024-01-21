@@ -10,6 +10,7 @@ namespace MVC_IntroDemo.Controllers
 	{
  		//value of _logger is passed by constructor
    		//_logger keeps record of errors
+     		//using interface for best practices
 		private readonly ILogger<HomeController> _logger;
   
 		//using dependancy injection through constructor
@@ -18,10 +19,12 @@ namespace MVC_IntroDemo.Controllers
 			_logger = logger;
 		}
 
-		public IActionResult Index()
+  		//represents the result of an action method
+		public IActionResult Index() //action
 		{
+  			//dynamic object - used to transfer small code; not heavy logic
 			ViewBag.Message = "Hello World";
-			return View();
+			return View(); //mapped to "Home/Index"
 		}
 
 		public IActionResult Privacy()
@@ -40,15 +43,15 @@ namespace MVC_IntroDemo.Controllers
 			return View();
 		}
 
-		[HttpGet]
+		[HttpGet] //attribute; action selector; explicit approach more appropriate
 		public IActionResult NumbersToN()
 		{
 			ViewBag.Count = 3;
 			return View();
 		}
 
-		[HttpPost]
-		public IActionResult NumbersToN(int count)
+		[HttpPost] //sending data to server
+		public IActionResult NumbersToN(int count) // using parameter
 		{
 			ViewBag.Count = count;
 			return View();
