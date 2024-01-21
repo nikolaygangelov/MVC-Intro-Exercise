@@ -22,8 +22,7 @@ namespace MVC_IntroDemo.Controllers
   		//represents the result of an action method
 		public IActionResult Index() //action
 		{
-  			//dynamic object - used to transfer small code; not heavy logic
-			ViewBag.Message = "Hello World";
+			ViewBag.Message = "Hello World"; //dynamic object - used to transfer small code, not heavy logic to View
 			return View(); //mapped to "Home/Index"
 		}
 
