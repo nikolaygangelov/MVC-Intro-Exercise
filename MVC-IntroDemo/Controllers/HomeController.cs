@@ -4,10 +4,15 @@ using System.Diagnostics;
 
 namespace MVC_IntroDemo.Controllers
 {
+	//HomeController inherits Controller class 
+ 	//gives you access to Request, Response, ViewBag, ViewData, View, etc.
 	public class HomeController : Controller
 	{
+ 		//value of _logger is passed by constructor
+   		//_logger keeps record of errors
 		private readonly ILogger<HomeController> _logger;
-
+  
+		//using dependancy injection through constructor
 		public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;
